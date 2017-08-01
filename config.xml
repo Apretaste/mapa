@@ -1,7 +1,12 @@
 <service>
 	<serviceName>mapa</serviceName>
-	<serviceDescription><![CDATA[Devuelve el mapa dada una direcci&oacute;n, coordenadas espec&iacute;ficas o lugar famoso]]></serviceDescription>
-	<creatorEmail>salvi.pascual@gmail.com</creatorEmail>
+	<serviceAliases>
+		<alias>mapas</alias>
+		<alias>map</alias>
+		<alias>maps</alias>
+	</serviceAliases>
+	<serviceDescription>Devuelve el mapa dada una direccion, coordenadas especificas o lugar famoso</serviceDescription>
+	<creatorEmail>salvi@apretaste.com</creatorEmail>
 	<serviceCategory>informativo</serviceCategory>
 	<serviceUsage>
 		<![CDATA[

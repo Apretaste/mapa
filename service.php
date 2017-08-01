@@ -14,8 +14,8 @@ class Mapa extends Service
 		if(empty($request->query))
 		{
 			$response = new Response();
-			$response->setResponseSubject("De donde sacamos el mapa?");
-			$response->createFromText("Usted no ha insertado ninguna direcci&oacute;n, coordenadas o lugar famoso a buscar. Inserte el texto en el asunto del email, justo despu&eacute;s de la palabra MAPA.<br/><br/>Por ejemplo: Asunto: <b>MAPA capitolio, cuba</b>");
+			$response->setResponseSubject("Que desea buscar en Wikipedia?");
+			$response->createFromTemplate("home.tpl", array());
 			return $response;
 		}
 
@@ -67,7 +67,7 @@ class Mapa extends Service
 			}
 		}
 
-		// remove bad starting arguments		
+		// remove bad starting arguments
 		if (substr($argument, 0, 3) == 'de ') $argument = substr($argument, 3);
 		if (substr($argument, 0, 4) == 'del ') $argument = substr($argument, 4);
 
@@ -106,7 +106,7 @@ class Mapa extends Service
 		$response = new Response();
 		$response->setResponseSubject("Mapa para " . $request->query);
 		$response->createFromTemplate("basic.tpl", $responseContent, array($mapImagePath));
-		
+
 		return $response;
-	}	
+	}
 }
