@@ -14,7 +14,8 @@ class Mapa extends Service
 		if(empty($request->query))
 		{
 			$response = new Response();
-			$response->setResponseSubject("Que desea buscar en Wikipedia?");
+			$response->setCache();
+			$response->setResponseSubject("Que mapa desea ver?");
 			$response->createFromTemplate("home.tpl", array());
 			return $response;
 		}
@@ -104,9 +105,9 @@ class Mapa extends Service
 
 		// create the response
 		$response = new Response();
+		$response->setCache();
 		$response->setResponseSubject("Mapa para " . $request->query);
 		$response->createFromTemplate("basic.tpl", $responseContent, array($mapImagePath));
-
 		return $response;
 	}
 }
