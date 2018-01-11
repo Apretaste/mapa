@@ -92,9 +92,6 @@ class Mapa extends Service
 		$content = file_get_contents($oStaticMap);
 		file_put_contents($mapImagePath, $content);
 
-		// optimize the image
-		$this->utils->optimizeImage($mapImagePath);
-
 		// create the response variables
 		$responseContent = array(
 			"type" => $type,
